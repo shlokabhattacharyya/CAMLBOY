@@ -38,6 +38,7 @@ module Uint16 : sig
   val lo : t -> Uint8.t
   val of_bytes : (hi : Uint8.t) -> (lo : Uint8.t) -> t
   val to_string : t -> string
+  val ( <= ) : t -> t -> bool
 end
 
 type uint8 = Uint8.t 

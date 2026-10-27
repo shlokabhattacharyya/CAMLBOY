@@ -38,6 +38,7 @@ module Uint16 = struct
   let lo x = x land 0xFF
   let of_bytes ~hi ~lo = (hi lsl 8) lor lo
   let to_string x = Printf.sprintf "0x%04X" x 
+  let ( <= ) = Int.(<=)
 end 
 
 type uint8 = Uint8.t 

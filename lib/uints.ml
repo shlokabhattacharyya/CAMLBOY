@@ -1,3 +1,5 @@
+(* unsigned 8-bit and 16-bit integers, since OCaml has none built in *)
+
 module Uint8 = struct
   type t = int
 

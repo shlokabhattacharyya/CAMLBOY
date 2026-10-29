@@ -36,7 +36,7 @@ module Uint16 : sig
   val compare : t -> t -> int
   val hi : t -> Uint8.t 
   val lo : t -> Uint8.t
-  val of_bytes : (hi : Uint8.t) -> (lo : Uint8.t) -> t
+  val of_bytes : hi:Uint8.t -> lo:Uint8.t -> t
   val to_string : t -> string
   val ( <= ) : t -> t -> bool
 end

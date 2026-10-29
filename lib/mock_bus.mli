@@ -2,6 +2,6 @@
 
 type t 
 
-val create : (size : int) -> t 
+val create : size:int -> t 
 
 include Word_addressable_intf.S with type t := t

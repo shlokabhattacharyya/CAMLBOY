@@ -14,7 +14,7 @@ module Uint8 = struct
   let logand a b = a land b 
   let logor a b = a lor b 
   let logxor a b = a lxor b 
-  let lnot a = lnot a land 0xFF
+  let lognot a = lnot a land 0xFF
   let shift_left a n = (a lsl n) land 0xFF
   let shift_right a n = (a lsr n)
   let equal = Int.equal
@@ -38,7 +38,7 @@ module Uint16 = struct
   let lo x = x land 0xFF
   let of_bytes ~hi ~lo = (hi lsl 8) lor lo
   let to_string x = Printf.sprintf "0x%04X" x 
-  let ( <= ) = Int.(<=)
+  let ( <= ) a b = a <= b
 end 
 
 type uint8 = Uint8.t 

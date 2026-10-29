@@ -16,10 +16,10 @@ let accepts t addr =
   Uint16.(t.start_addr <= addr && addr <= t.end_addr)
 
 let offset t addr = 
-  Uint16.to_int addr - Uint16.t start_addr
+  Uint16.to_int addr - Uint16.to_int t.start_addr
 
 let read_byte t addr =
-  Bytes.get t.bytes (offset t addr) |> Char.code |> Uint16.of_int
+  Bytes.get t.bytes (offset t addr) |> Char.code |> Uint8.of_int
 
 let write_byte t ~addr ~data = 
-  Bytes.set t.bytes (offset t addr) (Char.chr (Uint16.to_int data))
+  Bytes.set t.bytes (offset t addr) (Char.chr (Uint8.to_int data))

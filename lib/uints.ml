@@ -1,4 +1,4 @@
-(* unsigned 8-bit and 16-bit integers, since OCaml has none built in *)
+(* unsigned 8-bit, unsigned 16-bit, and signed 8-bit integers, since OCaml has none built in *)
 
 module Uint8 = struct
   type t = int
@@ -41,5 +41,14 @@ module Uint16 = struct
   let ( <= ) a b = a <= b
 end 
 
+module Int8 = struct 
+  type t = int
+  
+let of_uint8 x = 
+  let x = Uint8.to_int x in if x >= 0x80 then x - 0x100 else x (* two's complement *)
+let to_int x = x
+let to_string x = Printf.sprintf "%+d" x
+
 type uint8 = Uint8.t 
 type uint16 = Uint16.t
+type int8 = Int8.t

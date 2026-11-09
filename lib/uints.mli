@@ -1,4 +1,4 @@
-(* unsigned 8-bit and 16-bit integers, since OCaml has none built in *)
+(* unsigned 8-bit, unsigned 16-bit, and signed 8-bit integers, since OCaml has none built in *)
 
 module Uint8 : sig 
   type t
@@ -41,5 +41,14 @@ module Uint16 : sig
   val ( <= ) : t -> t -> bool
 end
 
+module Int8 : sig
+  type to_int
+
+  val of_uint8 : Uint8.t -> t 
+  val to_int : t -> int
+  val to_string : t -> string 
+end 
+
 type uint8 = Uint8.t 
 type uint16 = Uint16.t
+type int8 = Int8.t
